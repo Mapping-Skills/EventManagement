@@ -4,13 +4,19 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 from tkinter import messagebox
+import sqlite3
 
-
+con=sqlite3.connect("event.db")
+c=con.cursor()
 
 def send(email, password, username):
     # Header --> from, to, subject
 
-    from_mail = "pakpakpakya302@gmail.com"
+    c.execute("SELECT cmail from college_data")
+
+    data = c.fetchall()
+
+    from_mail = data[0][0]
 
     to_mail = email
 
@@ -53,7 +59,7 @@ def send(email, password, username):
 
     # Login
 
-    server.login(from_mail, "ghhdppyhtgpferpe")
+    server.login(from_mail, "kqagejzcmaxqglca")
 
     # Sending mail
 
