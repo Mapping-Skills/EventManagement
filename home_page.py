@@ -119,7 +119,7 @@ def tick():
 
 tick()
 
-img = ImageTk.PhotoImage(Image.open("Picture1-update-1.png"))
+img = ImageTk.PhotoImage(Image.open("logo.png"))
 image_label = Label(header_frame, image=img, relief="groove")
 image_label.grid(row=1, column=0)
 
